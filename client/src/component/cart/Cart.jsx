@@ -56,11 +56,11 @@ const Cart = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const totalAcortado = total.toFixed(2);
+    const totalAcortado = total ? total.toFixed(2) : '0.00'; // Acortar a 2 decimales o mostrar
 
     const SendWhatsAppMessage = async (cart) => {
         const message = `¡Hola! Me gustaría comprar los siguientes Marcianos:\n\n${cart
-            .map((book) => `Marcianos: ${book.nombre} - S/${book.precio} Cant: ${book.quantity} 
+            .map((book) => `Marcianos: ${book.title} - S/${book.priceWoo} Cant: ${book.quantity} 
                 `)
             .join("\n")}\n\n Total: ${totalAcortado} soles\n ¿Podrías ayudarme con la compra?`;
 
@@ -72,7 +72,7 @@ const Cart = () => {
 
     const deleteAllCart = () => {
         Swal.fire({
-            title: "¿Quieres vaciar el carrito?",
+            title: "¿Quieres vaciar la cesta?",
             text: "¡Se eliminaran todos los articulos!",
             icon: "question",
             showCancelButton: true,
@@ -106,7 +106,7 @@ const Cart = () => {
                 cartRemove(book)
                 Swal.fire({
                     title: "ELimiado!",
-                    text: "Articulos eliminado del carrito.",
+                    text: "Articulos eliminado del cesta.",
                     icon: "success"
                 });
             }
@@ -118,7 +118,7 @@ const Cart = () => {
             return {
                 id: book.id,
                 quantity: book.quantity,
-                price: book.precio,
+                price: book.priceWoo,
             }
         });
     }
@@ -127,7 +127,7 @@ const Cart = () => {
             <Flex flexDirection={"column"} w={'100%'} justify={'flex-start'} align={'center'} h={'auto'} >
                 {cart.length ? (
                     <>
-                        <Heading fontSize={"1.3rem"} marginLeft={'1rem'} fontFamily={'munayTitle'}>Nave de Compras</Heading>
+                        <Heading fontSize={"1.3rem"} marginLeft={'1rem'} fontFamily={'munayTitle'}>Cesta</Heading>
                         <Flex >
                             <TableContainer>
                                 <Table size={["sm", 'lg']}>
@@ -170,18 +170,18 @@ const Cart = () => {
                                                             whiteSpace={"pre-wrap"}
                                                         >
                                                             <Avatar
-                                                                src={book.image && book.image[0]}
+                                                                src={book.imgSrc && book.imgSrc[0]}
                                                                 h={"2rem"}
                                                                 w="2rem"
                                                                 objectFit={"cover"}
-                                                                name={book.name}
+                                                                name={book.title}
                                                             />
                                                             <Text fontWeight="bold" fontSize={"1.2rem"} fontFamily={'munayTitle'}>
-                                                                {book.nombre}
+                                                                {book.title}
                                                             </Text>
                                                         </Flex>
                                                     </Td>
-                                                    <Td  w={["auto", "10rem"]} color={'green'} fontWeight={'bold'}> s/{book.precio} </Td>
+                                                    <Td  w={["auto", "10rem"]} color={'green'} fontWeight={'bold'}> {book.priceWoo} </Td>
                                                     <Td>
                                                         <Button
                                                             bg='none'

@@ -19,10 +19,23 @@ const ImageRender = ({ image, name, wImg, hImg }) => {
     return (
         <>
             <Slider {...settings}>
-                {image.map((img, index) => (
-                    <div key={index} className={style.image_container}>
+                <div className={style.image_container}>
+                    <Image
+                        src={`${image}`}
+                        name={name}
+                        h={hImg}
+                        w={wImg}
+                        borderRadius={10}
+                        overflow={'hidden'}
+                        objectFit={'cover'}
+                        loading='lazy'
+                        alt={name}
+                    />
+                </div>
+                {/* {image.map((img) => (
+                    <div  className={style.image_container}>
                         <Image
-                            src={img}
+                            src={`'${img}'`}
                             name={name}
                             h={hImg}
                             w={wImg}
@@ -33,7 +46,7 @@ const ImageRender = ({ image, name, wImg, hImg }) => {
                             alt={name}
                         />
                     </div>
-                ))}
+                ))} */}
             </Slider>
         </>
     )

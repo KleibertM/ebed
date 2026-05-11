@@ -14,10 +14,10 @@ import { useEffect } from "react";
 
 // const ImageRender = lazy(()=> import('./ImageRender'))
 
-const DetailCards = () => {
+const DetailCards = ({data}) => {
     const { id } = useParams()
-    const filterData = dataMunay.filter((item) => item.id === id)
-    let bgPrice = filterData[0].tipo ? '#58D68D' : '#9b59b6';
+    const filterData = data.filter((item) => item.id === id)
+    let bgPrice = '#58D68D';
     useEffect(() => {
         // Esto asegura que el scroll se posicione en la parte superior cuando el componente se monte
         window.scrollTo(0, 0);
@@ -33,8 +33,8 @@ const DetailCards = () => {
                                 <ImageRender
                                     hImg={['450px', '500px']}
                                     wImg={['450px', '550px']}
-                                    image={filterData[0].image}
-                                    name={filterData[0].nombre} />
+                                    image={filterData[0].imgSrc}
+                                    name={filterData[0].title} />
                             </Flex>
                         </Box>
 
@@ -42,20 +42,20 @@ const DetailCards = () => {
                             <Box display='flex' flexDirection={'column'} gap={[4, 8]}>
                                 <Flex justify={'space-between'} align={'center'}>
                                     <Heading textTransform={'capitalize'} fontFamily={'munayTitle'}>
-                                        {filterData[0].nombre && filterData[0].nombre}
+                                        {filterData[0].title && filterData[0].title}
                                     </Heading>
                                     <Badge borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
-                                        S/ {filterData[0].precio}
+                                        {filterData[0].priceWoo}
                                     </Badge>
                                 </Flex>
                             </Box>
 
                             <Flex h={['auto', 'auto']} overflow={'hidden'} py='2' flexDirection={'column-reverse'}>
                                 <Container overflowY={'auto'} >
-                                    {filterData[0].descripcion}
+                                    {filterData[0].description}
                                 </Container>
 
-                                <Accordion defaultIndex={[0]} allowMultiple>
+                                {/* <Accordion defaultIndex={[0]} allowMultiple>
                                     <AccordionItem>
                                         <h2>
                                             <AccordionButton>
@@ -71,16 +71,16 @@ const DetailCards = () => {
                                             ))}
                                         </AccordionPanel>
                                     </AccordionItem>
-                                </Accordion>
+                                </Accordion> */}
                             </Flex>
 
                             <Flex
                                 position={'relative'}
                                 justify={'center'}
                                 align={'center'}
-                                w={'max-content'}
+                                w={'90vw'}
                                 bg='#58D68D'
-                                p='2'
+                                py='4'
                                 h={'auto'}
                                 margin={'0 auto'}
                                 borderRadius={[50, 50]}
@@ -94,7 +94,7 @@ const DetailCards = () => {
                             Más productos <BsCart4 />
                         </Heading>
                         <Flex overflowX={'scroll'} >
-                            <MoreItems />
+                            <MoreItems  data={data} />
                         </Flex>
                     </Flex>
                 </>

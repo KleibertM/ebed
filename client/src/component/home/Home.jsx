@@ -4,17 +4,19 @@ import Banner from "../Banner/Banner";
 // import TabsNav from "../Tabs/TabsNav";
 import { PiAlienFill, PiFlyingSaucerDuotone } from "react-icons/pi";
 import { lazy } from 'react';
+import CardsContent from "../Cards/Cards";
 
 const Items = lazy(()=> import("../Items/Items"))
 const BannerText = lazy(()=> import("../bannerText/BannerText"))
 const TabsNav = lazy(()=> import("../Tabs/TabsNav"))
 
-const Home = () => {
+const Home = ({data}) => {
     return (
         <> 
             <BannerText  icon={<PiFlyingSaucerDuotone />} text={'¡REALIZA TU PEDIDO AHORA!'} />
             <Banner />
-            <TabsNav />
+            {/* <TabsNav data={data} /> */}
+            <CardsContent data={data} />   
             <BannerText  icon={<PiAlienFill />} text={'Sobre Nosotros'} />
             <Items 
                 idTema={'#mision'}

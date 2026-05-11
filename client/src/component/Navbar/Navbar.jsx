@@ -4,7 +4,7 @@ import Logo from '../../assets/img/logo.png'
 import {Link} from 'react-router-dom'
 // import { lazy, Suspense } from 'react';
 import BtnSidebar from '../sidebar/BtnSidebar';
-import { PiFlyingSaucerFill, PiPhoneCallFill } from "react-icons/pi";
+import { PiBagFill, PiPhoneCallFill } from "react-icons/pi";
 // const Sidebar = lazy(()=> import('../sidebar/Sidebar'))
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
                 loading='lazy' />
             </Link>
 
-            <BtnSidebar link={'/cart'} icon={<PiFlyingSaucerFill />} />
+            <BtnSidebar link={'/cart'} icon={<PiBagFill />} />
             {/* <Sidebar /> */}
         </Flex>
         </>

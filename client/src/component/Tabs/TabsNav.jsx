@@ -5,7 +5,7 @@ import { lazy } from 'react';
 const CardsContent = lazy(()=> import('../Cards/Cards'))
 
 
-const TabsNav = () => {
+const TabsNav = ({data}) => {
 
   return (
     <Tabs isFitted variant='enclosed'>
@@ -15,10 +15,10 @@ const TabsNav = () => {
       </TabList>
       <TabPanels>
         <TabPanel>
-          <CardsContent stateFilter={true} />
+          <CardsContent data={data} />
         </TabPanel>
         <TabPanel>
-          <CardsContent stateFilter={false} />
+          <CardsContent data={data} />
         </TabPanel>
       </TabPanels>
     </Tabs>

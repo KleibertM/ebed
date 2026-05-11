@@ -1,15 +1,20 @@
-// import maracuyaImage from '../../assets/img/maracuya-2.jpg';
-// import fresaImage from '../../assets/img/fresa-2.jpg';
-// import mangoImage from '../../assets/img/mango.jpg';
-// import cocoImage from '../../assets/img/coco-1.jpg';
-// import oreoImage from '../../assets/img/oreo.jpg';
-// import lucumaImage from '../../assets/img/lucuma.jpg';
-// import choMentaImage from '../../assets/img/choMenta.jpg';
-// import fresaLecheImage from '../../assets/img/fresaLeche.jpg';
 import banner1 from '../../assets/banners/1.jpg'
 import banner2 from '../../assets/banners/2.jpg'
 import banner3 from '../../assets/banners/3.jpg'
 import banner4 from '../../assets/banners/4.jpg'
+import axios from 'axios';
+
+export const getData = async () => {
+  try {
+    const response = await axios.get('https://shaddai-f3ac3-default-rtdb.firebaseio.com/data.json');
+    console.log('Data fetched successfully:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return [];
+  }
+};
+
 export const dataMunay = [
   {
     id: "1",

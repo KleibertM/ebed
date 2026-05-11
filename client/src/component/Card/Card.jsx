@@ -10,9 +10,9 @@ import { lazy } from 'react';
 const ImageRender = lazy(()=> import('./ImageRender'))
  
 const CardComponent = ({ dataItem }) => {
-    const { id, nombre, descripcion, image, precio, ingredientes, estado, tipo } = dataItem
+    const { id, title, description, imgSrc, priceWoo } = dataItem
     
-    let bgPrice = tipo ? '#58D68D' : '#9b59b6';
+    let bgPrice = '#58D68D';
     return (
         <>
             <Flex flexDirection={'column'} gap={2}
@@ -20,15 +20,15 @@ const CardComponent = ({ dataItem }) => {
                 w={'max-content'}
                 >
                 <Box
-                    h={['auto', '350px']}
-                    w={['10rem', '250px']}
+                    h={['350px', '350px']}
+                    w={['90vw', '250px']}
                     position={'relative'}
                     borderRadius={10}
                     overflow={'hidden'}
                     boxShadow={'0 4px 10px #000'}
                 >
                     <Link to={`/detail/${id}`}>
-                        < ImageRender image={image} name={nombre} wImg={'100%'} hImg={'330px'} />
+                        < ImageRender image={imgSrc} name={name} wImg={'100%'} hImg={'max-content'} />
                         <Flex justify={'space-between'}
                             align={'center'}
                             position={'absolute'}
@@ -48,7 +48,7 @@ const CardComponent = ({ dataItem }) => {
                                 maxWidth={'2rem'}
                                 fontFamily={'munayTitle'}
                             >
-                                {nombre}
+                                {title}
                             </Text>
 
                             <Text bg={bgPrice}
@@ -60,14 +60,14 @@ const CardComponent = ({ dataItem }) => {
                                 h={['25px', 'auto']}
                                 justifyItems={'center'}
                                 textAlign={'center'}>
-                                s/ {precio}
+                                {priceWoo}
                             </Text>
 
                         </Flex>
                     </Link>
                 </Box>
-                <Flex gap={2} justify={'space-around'} w={['10rem', '250px']}>
-                    < BtnAddToCart  dataItem={dataItem} FlexDirec={['column','row']} />
+                <Flex gap={2} justify={'space-around'} w={['100%', '250px']}>
+                    < BtnAddToCart  dataItem={dataItem} FlexDirec={['row','row']} />
                 </Flex>
             </Flex>
         </>

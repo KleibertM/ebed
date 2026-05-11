@@ -19,7 +19,7 @@ export function CartProvider({ children }) {
             localStorage.setItem('total', JSON.stringify(newTotal));
         } else {
             const newProduct = { ...product }; // Crear un nuevo objeto de producto con una cantidad inicial de 1
-            const newTotal = total + (product.precio * product.quantity);
+            const newTotal = total + (product.priceWoo * product.quantity);
             setTotal(newTotal); // Actualizar el total sumando el precio del nuevo producto
             setCart([...cart, newProduct]); // Agregar el nuevo producto al carrito
             localStorage.setItem('cart', JSON.stringify([...cart, newProduct]));
@@ -70,7 +70,7 @@ export function CartProvider({ children }) {
     const cartRemove = (product) => {
         const productToRemove = cart.find(item => item.id === product.id);
         if (productToRemove) {
-            const newTotal = total - (productToRemove.precio * productToRemove.quantity);
+            const newTotal = total - (productToRemove.priceWoo * productToRemove.quantity);
             setTotal(newTotal);
 
             // Guardar prevState en una variable
@@ -93,7 +93,7 @@ export function CartProvider({ children }) {
 
     const calculateTotal = cart => {
         return cart.reduce((acc, item) => {
-            return acc + (item.precio * item.quantity);
+            return acc + (item.priceWoo * item.quantity);
         }, 0);
     };
 
