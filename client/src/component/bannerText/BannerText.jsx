@@ -1,9 +1,10 @@
 import { Text, Flex } from '@chakra-ui/react'
+import { beiColor, purColor } from '../Data/data'
 
 const BannerText = ({ icon, text }) => {
     return (
         <>
-            <Flex bg={'#9d00Ff'} align={'center'} justify={'center'} gap={2} color={'#EDE8D0'} fontFamily={'munayTitle'}>
+            <Flex bg={purColor} align={'center'} justify={'center'} gap={2} color={beiColor} fontFamily={'munayTitle'}>
                 <Text fontSize={'1.2rem'} >
                     {icon}
                 </Text>

@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 // import { lazy, Suspense } from 'react';
 import BtnSidebar from '../sidebar/BtnSidebar';
 import { PiBagFill, PiPhoneCallFill } from "react-icons/pi";
+import { beiColor, purColor } from '../Data/data';
 // const Sidebar = lazy(()=> import('../sidebar/Sidebar'))
 
 const Navbar = () => {
@@ -12,9 +13,9 @@ const Navbar = () => {
 
     return ( 
         <>
-        <Flex justify={'space-between'} align={'center'} h={['60px', '70px']} position={'fixed'} zIndex={999} w={'100vw'} bg={'#9d00Ff'} left={0} paddingX={['20px', '60px']}>
+        <Flex justify={'space-between'} align={'center'} h={['60px', '70px']} position={'fixed'} zIndex={999} w={'100vw'} bg={purColor} left={0} paddingX={['20px', '60px']}>
             <Link to={'/'} >
-                <Avatar size={['md', 'lg']} name='Munay - Marcianos Artesanales' src={Logo} bg={'#EDE8D0'} 
+                <Avatar size={['md', 'lg']} name='Munay - Marcianos Artesanales' src={Logo} bg={beiColor} 
                 loading='lazy' />
             </Link>
 

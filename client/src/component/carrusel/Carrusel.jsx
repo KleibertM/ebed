@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Carrusel = () => {
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1500,
         slidesToShow: 1,
@@ -30,8 +30,8 @@ const Carrusel = () => {
                                 <Image
                                     src={img.image}
                                     alt={img.name}
-                                    objectFit={'cover'}
-                                    h={{base: '100%', md: '350px'}}
+                                    objectFit={{base: 'cover', md: 'container'}}
+                                    h={{base: '100%', md: '480px'}}
                                     w={{base: 'auto', md: '100%'}}
                                     loading='lazy'
                                 />

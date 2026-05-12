@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getData = async () => {
   try {
     const response = await axios.get('https://shaddai-f3ac3-default-rtdb.firebaseio.com/data.json');
-    console.log('Data fetched successfully:', response.data);
+    // console.log('Data fetched successfully:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -23,3 +23,6 @@ export const banners = [
       name: 'banner2'
     }
   ]
+
+  export const purColor = '#9d00Ff';
+  export const beiColor = '#EDE8D0';

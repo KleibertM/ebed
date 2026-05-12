@@ -1,5 +1,6 @@
 import { Flex, Text, keyframes } from '@chakra-ui/react'
-import {  PiFlyingSaucerFill } from "react-icons/pi";
+import {  PiFishBold } from "react-icons/pi";
+import { beiColor } from '../Data/data';
 const animation = keyframes
     `from {
     opacity: 0
@@ -17,11 +18,11 @@ const CartNull = () => {
             <Flex flexDirection={'column'} align={'center'} justify={'center'} gap={4} animation={myAnimate} h={'80vh'}>
 
                 <Text fontSize={['20rem', 'auto']} 
-                color={'#58D68D'}>
-                    <PiFlyingSaucerFill />
+                color={beiColor}>
+                    <PiFishBold />
                 </Text>
                 <Text fontSize={'1.5rem'} fontWeight={'bold'}>
-                    ¡No tienes marcianos en la nave!
+                    ¡La cesta está vacía!
                 </Text>
             </Flex>
         </>

@@ -10,6 +10,7 @@ import BtnAddToCart from "../btn/BtnAddToCart";
 // import { lazy, Suspense } from 'react';
 import MoreItems from "./MoreItems";
 import { useEffect } from "react";
+import { beiColor } from "../Data/data";
 
 // const ImageRender = lazy(()=> import('./ImageRender'))
 
@@ -36,7 +37,7 @@ const DetailCards = ({data}) => {
                                     name={filterData[0].title} />
 
                             </Flex>
-                                    <Badge position={'absolute'} bottom={'1rem'} right={'1rem'} borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
+                                    <Badge position={'absolute'} bottom={['1rem', '5rem']} right={['1rem' , '2rem']} borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
                                         S/{filterData[0].priceWoo}
                                     </Badge>
                         </Box>
@@ -54,33 +55,15 @@ const DetailCards = ({data}) => {
                                 <Container overflowY={'auto'} >
                                     {filterData[0].description}
                                 </Container>
-
-                                {/* <Accordion defaultIndex={[0]} allowMultiple>
-                                    <AccordionItem>
-                                        <h2>
-                                            <AccordionButton>
-                                                <Box as="span" flex='1' textAlign='left' fontWeight={'bold'}>
-                                                    Ingredientes:
-                                                </Box>
-                                                <AccordionIcon />
-                                            </AccordionButton>
-                                        </h2>
-                                        <AccordionPanel pb={4} >
-                                            {filterData[0].ingredientes.map((i, index) => (
-                                                <Text key={index} >- {i}</Text>
-                                            ))}
-                                        </AccordionPanel>
-                                    </AccordionItem>
-                                </Accordion> */}
                             </Flex>
 
                             <Flex
                                 position={'relative'}
                                 justify={'center'}
                                 align={'center'}
-                                w={'90vw'}
-                                bg='#58D68D'
-                                py='4'
+                                w={['90vw','max-content']}
+                                bg={beiColor}
+                                py={['4', '2']}
                                 h={'auto'}
                                 margin={'0 auto'}
                                 borderRadius={[50, 50]}
@@ -89,7 +72,7 @@ const DetailCards = ({data}) => {
                             </Flex>
                         </Flex>
                     </Box>
-                    <Flex p='2' bg='whitesmoke' flexDirection={'column'} position={'relative'}>
+                    <Flex px={['10px', '40px']} py={['10px', '20px']} bg='whitesmoke' flexDirection={'column'} position={'relative'}>
                         <Heading fontSize={'1.3rem'} display={'flex'} gap={2} justifySelf={'center'} fontFamily={'munayTitle'}>
                             Más productos <BsCart4 />
                         </Heading>

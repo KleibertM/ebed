@@ -5,6 +5,7 @@ import {
 import {Link} from 'react-router-dom'
 import BtnAddToCart from '../btn/BtnAddToCart';
 import { lazy } from 'react';
+import { beiColor, purColor } from '../Data/data';
 
 
 const ImageRender = lazy(()=> import('./ImageRender'))
@@ -18,17 +19,20 @@ const CardComponent = ({ dataItem }) => {
             <Flex flexDirection={'column'} gap={2}
                 borderRadius={10} key={id} position={'relative'}
                 w={'max-content'}
+                boxShadow={'0 4px 10px #000'}
+                paddingBottom={'1rem'}
                 >
                 <Box
                     h={['350px', '350px']}
-                    w={['90vw', '250px']}
+                    w={['90vw', '300px']}
                     position={'relative'}
                     borderRadius={10}
                     overflow={'hidden'}
-                    boxShadow={'0 4px 10px #000'}
+                    
                 >
                     <Link to={`/detail/${id}`}>
                         < ImageRender image={imgSrc} name={name} wImg={'100%'} hImg={'max-content'} />
+                        
                         <Flex justify={'space-between'}
                             align={'center'}
                             position={'absolute'}
@@ -44,9 +48,10 @@ const CardComponent = ({ dataItem }) => {
                             <Text textOverflow={'ellipsis'}
                                 whiteSpace={'nowrap'}
                                 fontWeight={'bold'}
-                                textShadow={'0 5px 10px #000'}
+                                textShadow={`0 5px 10px ${beiColor}`}
                                 maxWidth={'2rem'}
                                 fontFamily={'munayTitle'}
+                                color={purColor}
                             >
                                 {title}
                             </Text>
@@ -66,7 +71,7 @@ const CardComponent = ({ dataItem }) => {
                         </Flex>
                     </Link>
                 </Box>
-                <Flex gap={2} justify={'space-around'} w={['100%', '250px']}>
+                <Flex gap={2} px={['10px', '20px']} justify={'space-around'} w={['100#', '100%']}>
                     < BtnAddToCart  dataItem={dataItem} FlexDirec={['row','row']} />
                 </Flex>
             </Flex>

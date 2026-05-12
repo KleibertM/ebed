@@ -1,6 +1,7 @@
 import { Button, Text, Tooltip, keyframes } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../../hook/cartHook'
+import { beiColor, purColor } from '../Data/data';
 
 const animation = keyframes
     `from {
@@ -25,8 +26,8 @@ const BtnSidebar = ({ link, nameRoute, icon }) => {
                         w={'max-content'}
                         position={'relative'} marginY={1} justifyContent={'center'} alignContent={'center'}
                         borderRadius={50}
-                        bg={'#EDE8D0'}
-                        color={'#9d00Ff'}
+                        bg={beiColor}
+                        color={purColor}
                         border={'1px solid #2E4053'}
                         name='menu lateral'
                         gap={1}

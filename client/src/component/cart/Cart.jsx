@@ -59,8 +59,8 @@ const Cart = () => {
     const totalAcortado = total ? total.toFixed(2) : '0.00'; // Acortar a 2 decimales o mostrar
 
     const SendWhatsAppMessage = async (cart) => {
-        const message = `¡Hola! Me gustaría comprar los siguientes Marcianos:\n\n${cart
-            .map((book) => `Marcianos: ${book.title} - S/${book.priceWoo} Cant: ${book.quantity} 
+        const message = `¡Hola! Me gustaría comprar:\n\n${cart
+            .map((book) => `Biblia: ${book.title} - S/${book.priceWoo} Cant: ${book.quantity} 
                 `)
             .join("\n")}\n\n Total: ${total} soles\n ¿Podrías ayudarme con la compra?`;
 
