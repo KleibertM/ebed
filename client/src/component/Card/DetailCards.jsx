@@ -5,7 +5,6 @@ import { Box, Badge, Flex, Heading, Text, Container, Accordion, AccordionItem,
     AccordionPanel,
     AccordionIcon, } from '@chakra-ui/react'
 import { BsCart4 } from "react-icons/bs";
-import { dataMunay } from '../Data/data'
 import ImageRender from "./ImageRender";
 import BtnAddToCart from "../btn/BtnAddToCart";
 // import { lazy, Suspense } from 'react';
@@ -35,18 +34,19 @@ const DetailCards = ({data}) => {
                                     wImg={['450px', '550px']}
                                     image={filterData[0].imgSrc}
                                     name={filterData[0].title} />
+
                             </Flex>
+                                    <Badge position={'absolute'} bottom={'1rem'} right={'1rem'} borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
+                                        S/{filterData[0].priceWoo}
+                                    </Badge>
                         </Box>
 
                         <Flex p='6' gap={4} flexDirection={'column'} h={{ base: '400px', md: '550px' }} position={'relative'}  >
                             <Box display='flex' flexDirection={'column'} gap={[4, 8]}>
-                                <Flex justify={'space-between'} align={'center'}>
+                                <Flex justify={'center'} align={'center'}>
                                     <Heading textTransform={'capitalize'} fontFamily={'munayTitle'}>
                                         {filterData[0].title && filterData[0].title}
                                     </Heading>
-                                    <Badge borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
-                                        {filterData[0].priceWoo}
-                                    </Badge>
                                 </Flex>
                             </Box>
 

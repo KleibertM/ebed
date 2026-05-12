@@ -2,22 +2,20 @@ import Banner from "../Banner/Banner";
 // import Items from "../Items/Items";
 // import BannerText from "../bannerText/BannerText";
 // import TabsNav from "../Tabs/TabsNav";
-import { PiAlienFill, PiFlyingSaucerDuotone } from "react-icons/pi";
+import { PiBookOpenTextFill , PiFishBold   } from "react-icons/pi";
 import { lazy } from 'react';
-import CardsContent from "../Cards/Cards";
+import ProductsWithPagination from "../Cards/ProductsWithPaginatio";
 
 const Items = lazy(()=> import("../Items/Items"))
 const BannerText = lazy(()=> import("../bannerText/BannerText"))
-const TabsNav = lazy(()=> import("../Tabs/TabsNav"))
 
 const Home = ({data}) => {
     return (
         <> 
-            <BannerText  icon={<PiFlyingSaucerDuotone />} text={'¡REALIZA TU PEDIDO AHORA!'} />
+            <BannerText  icon={<PiFishBold   />} text={'¡REALIZA TU PEDIDO AHORA!'} />
             <Banner />
-            {/* <TabsNav data={data} /> */}
-            <CardsContent data={data} />   
-            <BannerText  icon={<PiAlienFill />} text={'Sobre Nosotros'} />
+            <ProductsWithPagination  data={data} />
+            <BannerText  icon={<PiBookOpenTextFill  />} text={'Sobre Nosotros'} />
             <Items 
                 idTema={'#mision'}
                 image={'https://cdn-icons-png.flaticon.com/512/1239/1239710.png'}

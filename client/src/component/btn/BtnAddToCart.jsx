@@ -6,7 +6,7 @@ import { PiBagFill } from "react-icons/pi";
 const BtnAddToCart = ({ dataItem, FlexDirec }) => {
     const { addToCart } = useCart()
     const toast = useToast()
-    let bgPrice ='#454F36';
+    let bgPrice ='#9d00Ff';
     const [quantity, setQuantity] = useState(1);
     return (
         <>
@@ -14,7 +14,8 @@ const BtnAddToCart = ({ dataItem, FlexDirec }) => {
             flexDirection={FlexDirec}
             w={'100%'}
             justify={'center'} 
-            gap={2}>
+            gap={2}
+            >
                 
                 <Select
                     name="elegir cantidad"
@@ -34,7 +35,7 @@ const BtnAddToCart = ({ dataItem, FlexDirec }) => {
                     ))}
                 </Select>
                 <Tooltip label='Agregar a la Cesta' >
-                    <Button w={['100%', 'auto']} bg={bgPrice} color={'white'} name="Agregar a la Cesta" gap={2}
+                    <Button w={['100%', 'auto']} bg={bgPrice} color={'#EDE8D0'} name="Agregar a la Cesta" gap={2}
                         onClick={() => {
                             const productWithQuantity = { ...dataItem, quantity }; // Agregar la cantidad seleccionada al producto
                             addToCart(productWithQuantity); // Llamar a addToCart con el producto actualizado

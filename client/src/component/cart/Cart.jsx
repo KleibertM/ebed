@@ -62,7 +62,7 @@ const Cart = () => {
         const message = `¡Hola! Me gustaría comprar los siguientes Marcianos:\n\n${cart
             .map((book) => `Marcianos: ${book.title} - S/${book.priceWoo} Cant: ${book.quantity} 
                 `)
-            .join("\n")}\n\n Total: ${totalAcortado} soles\n ¿Podrías ayudarme con la compra?`;
+            .join("\n")}\n\n Total: ${total} soles\n ¿Podrías ayudarme con la compra?`;
 
         const formattedMessage = encodeURIComponent(message);
         const whatsappURL = `https://api.whatsapp.com/send?phone=51976963819&text=${formattedMessage}`;

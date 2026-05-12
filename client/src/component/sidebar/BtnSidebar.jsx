@@ -25,8 +25,8 @@ const BtnSidebar = ({ link, nameRoute, icon }) => {
                         w={'max-content'}
                         position={'relative'} marginY={1} justifyContent={'center'} alignContent={'center'}
                         borderRadius={50}
-                        bg={' #454F36'}
-                        color={'#fff'}
+                        bg={'#EDE8D0'}
+                        color={'#9d00Ff'}
                         border={'1px solid #2E4053'}
                         name='menu lateral'
                         gap={1}

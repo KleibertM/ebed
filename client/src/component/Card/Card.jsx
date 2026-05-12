@@ -60,7 +60,7 @@ const CardComponent = ({ dataItem }) => {
                                 h={['25px', 'auto']}
                                 justifyItems={'center'}
                                 textAlign={'center'}>
-                                {priceWoo}
+                                S/{priceWoo}
                             </Text>
 
                         </Flex>

@@ -1,6 +1,6 @@
 // import Contact from "../contact/Contact"
 // import BannerText from '../bannerText/BannerText';
-import { PiPlanetFill } from "react-icons/pi";
+import { PiFishBold  } from "react-icons/pi";
 import { lazy, Suspense } from 'react';
 
 
@@ -11,7 +11,7 @@ const Footer = () => {
     return (
         <>
         <Contact />
-        <BannerText icon={<PiPlanetFill />} text={'Munay - Marcianos Artesanales'} />
+        <BannerText icon={<PiFishBold  />} text={'Ebed - Libreria Cristiana'} />
         </>
     )
 }

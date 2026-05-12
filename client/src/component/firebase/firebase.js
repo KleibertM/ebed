@@ -3,15 +3,26 @@ import { getDatabase } from "firebase/database";
 import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
+const {
+  VITE_FIREBASE_apiKey,
+  VITE_FIREBASE_authDomain,
+  VITE_FIREBASE_databaseURL,
+  VITE_FIREBASE_projectId,
+  VITE_FIREBASE_storageBucket,
+  VITE_FIREBASE_messagingSenderId,
+  VITE_FIREBASE_appId,
+  VITE_FIREBASE_measurementId
+} = import.meta.env;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAa54Im6dkvYnsMKTFkKFgZb6cdl67sgfc",
-  authDomain: "shaddai-f3ac3.firebaseapp.com",
-  databaseURL: "https://shaddai-f3ac3-default-rtdb.firebaseio.com", // Muy importante para Realtime
-  projectId: "shaddai-f3ac3",
-  storageBucket: "shaddai-f3ac3.firebasestorage.app",
-  messagingSenderId: "913720266520",
-  appId: "1:913720266520:web:e424e7cd83dfe26019d86d",
-  measurementId: "G-CZ8MZ8EF2K"
+  apiKey: VITE_FIREBASE_apiKey,
+  authDomain: VITE_FIREBASE_authDomain,
+  databaseURL: VITE_FIREBASE_databaseURL,
+  projectId: VITE_FIREBASE_projectId,
+  storageBucket: VITE_FIREBASE_storageBucket,
+  messagingSenderId: VITE_FIREBASE_messagingSenderId,
+  appId: VITE_FIREBASE_appId,
+  measurementId: VITE_FIREBASE_measurementId
 };
 
 // 1. Inicializamos la App una sola vez

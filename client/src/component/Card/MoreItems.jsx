@@ -1,7 +1,6 @@
 
 import {Flex} from '@chakra-ui/react'
 import CardComponent from './Card'
-import {dataMunay} from '../Data/data'
 
 const MoreItems = ({ data }) => {
 
