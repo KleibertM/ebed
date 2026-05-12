@@ -18,9 +18,9 @@ const Home = ({data}) => {
             <BannerText  icon={<PiBookOpenTextFill  />} text={'Sobre Nosotros'} />
             <Items 
                 idTema={'#mision'}
-                image={'https://cdn-icons-png.flaticon.com/512/1239/1239710.png'}
+                image={'https://cdn-icons-png.flaticon.com/512/102/102349.png'}
                 title={'Misión'}
-                text={'Nuestra misión es ofrecer una experiencia refrescante y saludable a través de nuestros marcianos de frutas, elaborados con ingredientes naturales y frescos. Nos comprometemos a proporcionar productos de calidad que satisfagan los paladares más exigentes, manteniendo siempre un enfoque en la salud y el bienestar de nuestros clientes. Queremos ser reconocidos como líderes en la industria de los marcianos de frutas, destacando por nuestro compromiso con la calidad, la innovación y la excelencia en el servicio al cliente.'}
+                text={'Nuestra misión es facilitar el acceso a la Palabra de Dios a través de una plataforma digital innovadora, ofreciendo una amplia variedad de Biblias Reina Valera 1960 con diseños que inspiren a cada creyente. Existimos para servir al Cuerpo de Cristo, proveyendo herramientas que fortalezcan el estudio bíblico y fomenten un encuentro diario y profundo con nuestro Señor Jesucristo.'}
                 resaltarText={['refrescante y saludable', 'naturales y frescos', 'calidad, la innovación y la excelencia']}
                 diretionY={'column'}
                 diretionX={'row'}
@@ -28,9 +28,18 @@ const Home = ({data}) => {
 
             <Items
                 idTema={'#vision'}
-                image={'https://cdn-icons-png.flaticon.com/512/1644/1644005.png'}
+                image={'https://cdn-icons-png.flaticon.com/512/561/561094.png'}
                 title={'Visión'}
-                text={'Nuestra visión es convertirnos en el principal distribuidor de marcianos de frutas y helados, tanto a nivel local como nacional, estableciendo estándares de calidad superiores en la industria. Nos esforzamos por ser reconocidos por nuestro sabor natural y fresco, así como por la transparencia y la integridad en todos nuestros procesos. Buscamos expandir nuestro alcance, brindando a más personas la oportunidad de disfrutar de nuestros deliciosos productos, mientras mantenemos nuestro compromiso con la salud y la calidad.'}
+                text={'Ser la librería cristiana online referente en el Perú, reconocida por nuestra fidelidad a los principios bíblicos y la excelencia tecnológica. Aspiramos a que cada hogar tenga una Biblia que no solo sea un libro, sino un puente hacia una relación personal y transformadora con Cristo, extendiendo Su mensaje a través de cada entrega y cada conexión digital.'}
+                resaltarText={['sabor natural y fresco', 'deliciosos productos', 'salud y la calidad.']}
+                diretionY={'column'}
+                diretionX={'row-reverse'}
+            />
+            <Items
+                idTema={'#valores'}
+                image={'https://cdn-icons-png.flaticon.com/512/5002/5002927.png'}
+                title={'Valores'}
+                text={'Fidelidad Bíblica: Priorizamos la distribución de la sana doctrina plasmada en la versión Reina Valera 1960.  Excelencia en el Servicio: Trabajamos para el Señor, por lo que buscamos que cada proceso desde el código de la web hasta la entrega en Los Olivos sea de la más alta calidad. Propósito Eterno: Entendemos que nuestra labor técnica tiene un impacto espiritual; cada Biblia vendida es una semilla del Evangelio.'}
                 resaltarText={['sabor natural y fresco', 'deliciosos productos', 'salud y la calidad.']}
                 diretionY={'column'}
                 diretionX={'row-reverse'}
