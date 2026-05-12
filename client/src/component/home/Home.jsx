@@ -1,10 +1,7 @@
 import Banner from "../Banner/Banner";
-// import Items from "../Items/Items";
-// import BannerText from "../bannerText/BannerText";
-// import TabsNav from "../Tabs/TabsNav";
 import { PiBookOpenTextFill , PiFishBold   } from "react-icons/pi";
 import { lazy } from 'react';
-import ProductsWithPagination from "../Cards/ProductsWithPaginatio";
+import ProductsWithPagination from "../Cards/ProductsWithPagination";
 
 const Items = lazy(()=> import("../Items/Items"))
 const BannerText = lazy(()=> import("../bannerText/BannerText"))

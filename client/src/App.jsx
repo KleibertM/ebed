@@ -10,8 +10,6 @@ import BtnWhatsapp from './component/whatsapp/BtnWhatsApp'
 import { useEffect, useState } from 'react'
 import { getData } from './component/Data/data'
 
-// const Cart = lazy(()=> import('./component/cart/Cart'))
-// const Footer = lazy(()=> import('./component/footer/Footer'))
 
 function App() {
   const [data, setData] = useState([]); // 1. Estado para los datos

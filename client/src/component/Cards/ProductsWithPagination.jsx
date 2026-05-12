@@ -1,4 +1,3 @@
-"use client"
 import { ButtonGroup, IconButton, Grid, GridItem, Button, Flex, Box, Input, Select, InputGroup, InputLeftElement } from "@chakra-ui/react"
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi"
 import CardComponent from "../Card/CardComponent"
