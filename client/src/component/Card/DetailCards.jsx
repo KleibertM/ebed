@@ -41,7 +41,7 @@ const DetailCards = ({ data }) => {
                                     image={filterData[0].imgSrc}
                                     name={filterData[0].name}
                                     wImg={'100%'}
-                                    hImg={'max-content'}
+                                    hImg={'auto'}
                                     onLoad={() => setImageLoaded(true)}
                                     style={{
                                         display: imageLoaded ? 'block' : 'none'

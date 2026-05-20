@@ -34,21 +34,6 @@ const ImageRender = ({ image, name, wImg, hImg, onLoad }) => {
                         
                     />
                 </div>
-                {/* {image.map((img) => (
-                    <div  className={style.image_container}>
-                        <Image
-                            src={`'${img}'`}
-                            name={name}
-                            h={hImg}
-                            w={wImg}
-                            borderRadius={10}
-                            overflow={'hidden'}
-                            objectFit={'cover'}
-                            loading='lazy'
-                            alt={name}
-                        />
-                    </div>
-                ))} */}
             </Slider>
         </>
     )

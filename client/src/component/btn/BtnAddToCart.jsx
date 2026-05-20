@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useCart } from "../../hook/cartHook";
 import { Button, useToast, Select, Flex, Text, Tooltip } from '@chakra-ui/react'
 import { PiBagFill } from "react-icons/pi";
+import { beiColor, purColor } from "../Data/data";
 
 const BtnAddToCart = ({ dataItem, FlexDirec }) => {
     const { addToCart } = useCart()
@@ -35,7 +36,7 @@ const BtnAddToCart = ({ dataItem, FlexDirec }) => {
                     ))}
                 </Select>
                 <Tooltip label='Agregar a la Cesta' >
-                    <Button w={['100%', 'auto']} bg={bgPrice} color={'#EDE8D0'} name="Agregar a la Cesta" gap={2}
+                    <Button w={['100%', 'auto']} bg={purColor} color={beiColor} name="Agregar a la Cesta" gap={2}
                         onClick={() => {
                             const productWithQuantity = { ...dataItem, quantity }; // Agregar la cantidad seleccionada al producto
                             addToCart(productWithQuantity); // Llamar a addToCart con el producto actualizado
