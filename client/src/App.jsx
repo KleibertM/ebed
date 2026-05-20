@@ -15,34 +15,42 @@ function App() {
   const [data, setData] = useState([]); // 1. Estado para los datos
   const [loading, setLoading] = useState(true);
   
+  
  useEffect(() => {
-    const cargarDatos = async () => {
-      // 1. Intentamos obtener la data del almacenamiento local primero
-      const cachedData = localStorage.getItem("ebed_catalogo");
-      
-      if (cachedData) {
-        setData(JSON.parse(cachedData));
-        setLoading(false); // Si hay caché, dejamos de mostrar el spinner rápido
-      }
+  const cargarDatos = async () => {
+    try {
+      const cache = localStorage.getItem("ebed_catalogo");
 
-      try {
-        // 2. Traemos la data fresca de Firebase
-        const result = await getData(); 
-        
-        if (result) {
-          setData(result);
-          // 3. Guardamos/Actualizamos el caché para la próxima visita
-          localStorage.setItem("ebed_catalogo", JSON.stringify(result));
-        }
-      } catch (error) {
-        console.error("Error al cargar desde Firebase:", error);
-      } finally {
+      if (cache) {
+        const parsed = JSON.parse(cache);
+
+        setData(parsed.data);
         setLoading(false);
-      }
-    };
 
-    cargarDatos();
-  }, []);
+        return;
+      }
+
+      const result = await getData();
+
+      if (result) {
+        setData(result);
+
+        localStorage.setItem(
+          "ebed_catalogo",
+          JSON.stringify({
+            data: result,
+          })
+        );
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  cargarDatos();
+}, []);
 
   return (
     <>

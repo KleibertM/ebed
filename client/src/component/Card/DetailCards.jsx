@@ -1,45 +1,57 @@
 
 import { useParams } from "react-router-dom";
-import { Box, Badge, Flex, Heading, Text, Container, Accordion, AccordionItem,
+import {
+    Box, Badge, Flex, Heading, Text, Container, Accordion, AccordionItem,
     AccordionButton,
     AccordionPanel,
-    AccordionIcon, } from '@chakra-ui/react'
+    AccordionIcon,
+} from '@chakra-ui/react'
 import { BsCart4 } from "react-icons/bs";
 import ImageRender from "./ImageRender";
 import BtnAddToCart from "../btn/BtnAddToCart";
-// import { lazy, Suspense } from 'react';
 import MoreItems from "./MoreItems";
 import { useEffect } from "react";
 import { beiColor } from "../Data/data";
+import Loading from "../utils/Loading";
+import { useState } from "react";
 
-// const ImageRender = lazy(()=> import('./ImageRender'))
-
-const DetailCards = ({data}) => {
+const DetailCards = ({ data }) => {
+    const [imageLoaded, setImageLoaded] = useState(false)
     const { id } = useParams()
     const filterData = data.filter((item) => item.id === id)
     let bgPrice = '#58D68D';
     useEffect(() => {
         // Esto asegura que el scroll se posicione en la parte superior cuando el componente se monte
-        window.scrollTo(0, 0);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }, [filterData]);
     return (
         <>
             {filterData.length ? (
                 <>
-                    <Box borderRadius='lg' overflow='hidden' w={'100%'} h={{ base: '95vh', md: 'auto' }} position={'relative'} bg='white' display={'flex'} flexDirection={['column', 'row']} gap={[0,20]}  justifyContent={'center'} paddingTop={['0', '1rem']} px={['0px', '40px']} margin={'0'}>
+                    <Box borderRadius='lg' overflow='hidden' w={'100%'} h={{ base: '95vh', md: 'auto' }} position={'relative'} bg='white' display={'flex'} flexDirection={['column', 'row']} gap={[0, 20]} justifyContent={'center'} paddingTop={['0', '1rem']} px={['0px', '40px']} margin={'0'}>
 
                         <Box h={{ base: '450px', md: '550px' }} w={['100%', '550px']} overflow={'hidden'} px='8' position={'relative'}  >
                             <Flex w={'100%'} h={'100%'} flexDirection={'column'} position={'absolute'} top={0} left={0} >
+                                {!imageLoaded && <Loading />}
+
                                 <ImageRender
-                                    hImg={['450px', '500px']}
-                                    wImg={['100%', '550px']}
                                     image={filterData[0].imgSrc}
-                                    name={filterData[0].title} />
+                                    name={filterData[0].name}
+                                    wImg={'100%'}
+                                    hImg={'max-content'}
+                                    onLoad={() => setImageLoaded(true)}
+                                    style={{
+                                        display: imageLoaded ? 'block' : 'none'
+                                    }}
+                                />
 
                             </Flex>
-                                    <Badge position={'absolute'} bottom={['1rem', '5rem']} right={['1rem' , '2rem']} borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
-                                        S/{filterData[0].priceWoo}
-                                    </Badge>
+                            <Badge position={'absolute'} bottom={['1rem', '5rem']} right={['1rem', '2rem']} borderRadius='full' px='2' fontSize={'1.3rem'} bg={bgPrice} color={'#fff'} w={'max-content'}>
+                                S/{filterData[0].priceWoo}
+                            </Badge>
                         </Box>
 
                         <Flex p='6' gap={4} flexDirection={'column'} h={{ base: '400px', md: '550px' }} position={'relative'}  >
@@ -61,9 +73,10 @@ const DetailCards = ({data}) => {
                                 position={'relative'}
                                 justify={'center'}
                                 align={'center'}
-                                w={['90vw','max-content']}
+                                w={['90vw', 'max-content']}
                                 bg={beiColor}
-                                py={['4', '2']}
+                                py={['5', '4']}
+                                px={'1'}
                                 h={'auto'}
                                 margin={'0 auto'}
                                 borderRadius={[50, 50]}
@@ -77,13 +90,13 @@ const DetailCards = ({data}) => {
                             Más productos <BsCart4 />
                         </Heading>
                         <Flex overflowX={'scroll'} >
-                            <MoreItems  data={data} />
+                            <MoreItems data={data} />
                         </Flex>
                     </Flex>
                 </>
 
             ) : (
-                <Text>cargando / vacio</Text>
+                <Loading />
             )}
         </>
     )

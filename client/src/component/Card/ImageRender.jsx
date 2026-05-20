@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import style from './Image.module.css'
 
 
-const ImageRender = ({ image, name, wImg, hImg }) => {
+const ImageRender = ({ image, name, wImg, hImg, onLoad }) => {
 
     const settings = {
         dots: true,
@@ -30,6 +30,8 @@ const ImageRender = ({ image, name, wImg, hImg }) => {
                         objectFit={'cover'}
                         loading='lazy'
                         alt={name}
+                        onLoad={onLoad}
+                        
                     />
                 </div>
                 {/* {image.map((img) => (

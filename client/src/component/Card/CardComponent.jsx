@@ -1,18 +1,22 @@
 import {
-    Flex, Box, Text, 
+    Flex, Box, Text,
 } from '@chakra-ui/react'
 // import ImageRender from './ImageRender';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import BtnAddToCart from '../btn/BtnAddToCart';
 import { lazy } from 'react';
 import { beiColor, purColor } from '../Data/data';
+import { useState } from 'react';
+import Loading from '../utils/Loading';
+import ImageSkeleton from '../utils/ImageSkeleton';
 
 
-const ImageRender = lazy(()=> import('./ImageRender'))
- 
+const ImageRender = lazy(() => import('./ImageRender'))
+
 const CardComponent = ({ dataItem }) => {
-    const { id, title, description, imgSrc, priceWoo } = dataItem
-    
+    const { id, title, description, imgSrc, priceWoo } = dataItem;
+    const [imageLoaded, setImageLoaded] = useState(false)
+
     let bgPrice = '#58D68D';
     return (
         <>
@@ -21,18 +25,28 @@ const CardComponent = ({ dataItem }) => {
                 w={'max-content'}
                 boxShadow={'0 4px 10px #000'}
                 paddingBottom={'1rem'}
-                >
+            >
                 <Box
                     h={['350px', '350px']}
                     w={['90vw', '300px']}
                     position={'relative'}
                     borderRadius={10}
                     overflow={'hidden'}
-                    
+
                 >
                     <Link to={`/detail/${id}`}>
-                        < ImageRender image={imgSrc} name={name} wImg={'100%'} hImg={'max-content'} />
-                        
+                        {!imageLoaded && <ImageSkeleton wImg={'100%'} hImg={'100%'} />}
+
+                        <ImageRender
+                            image={imgSrc}
+                            name={name}
+                            wImg={'100%'}
+                            hImg={'max-content'}
+                            onLoad={() => setImageLoaded(true)}
+                            style={{
+                                display: imageLoaded ? 'block' : 'none'
+                            }}
+                        />
                         <Flex justify={'space-between'}
                             align={'center'}
                             position={'absolute'}
@@ -72,7 +86,7 @@ const CardComponent = ({ dataItem }) => {
                     </Link>
                 </Box>
                 <Flex gap={2} px={['10px', '20px']} justify={'space-around'} w={['100#', '100%']}>
-                    < BtnAddToCart  dataItem={dataItem} FlexDirec={['row','row']} />
+                    < BtnAddToCart dataItem={dataItem} FlexDirec={['row', 'row']} />
                 </Flex>
             </Flex>
         </>

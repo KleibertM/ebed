@@ -1,5 +1,3 @@
-// import Contact from "../contact/Contact"
-// import BannerText from '../bannerText/BannerText';
 import { PiFishBold  } from "react-icons/pi";
 import { lazy, Suspense } from 'react';
 

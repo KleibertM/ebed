@@ -5,7 +5,6 @@ import axios from 'axios';
 const  {VITE_FIREBASE_API_ENDPOINT} = import.meta.env;
 
 export const getData = async () => {
-  console.log('ULR: ',VITE_FIREBASE_API_ENDPOINT);
   
   try {
     const response = await axios.get(VITE_FIREBASE_API_ENDPOINT);
