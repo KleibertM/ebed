@@ -2,10 +2,14 @@ import banner1 from '../../assets/banners/1.jpg'
 import banner2 from '../../assets/banners/2.jpg'
 import axios from 'axios';
 
+const  {VITE_FIREBASE_API_ENDPOINT} = import.meta.env;
+
 export const getData = async () => {
+  console.log('ULR: ',VITE_FIREBASE_API_ENDPOINT);
+  
   try {
-    const response = await axios.get('https://shaddai-f3ac3-default-rtdb.firebaseio.com/data.json');
-    // console.log('Data fetched successfully:', response.data);
+    const response = await axios.get(VITE_FIREBASE_API_ENDPOINT);
+    console.log('Data fetched successfully:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);

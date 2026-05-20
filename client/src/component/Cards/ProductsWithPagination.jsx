@@ -5,14 +5,18 @@ import { useState } from "react"
 import { HiSearch } from "react-icons/hi"
 
 const ProductsWithPagination = ({ data }) => {
+  console.log('Data llegando :', data);
+  
   const [searchTerm, setSearchTerm] = useState("")
   const [sortOrder, setSortOrder] = useState("asc")
   const [page, setPage] = useState(1)
 
   // 1. Lógica de filtrado por búsqueda
-  const filteredData = data.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+ const filteredData = Array.isArray(data)
+  ? data.filter(item =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  : []
 
   // 2. Lógica de ordenamiento
   const sortedData = [...filteredData].sort((a, b) => {

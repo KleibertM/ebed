@@ -1,4 +1,5 @@
-import { Flex, Text, keyframes } from '@chakra-ui/react'
+import { Flex, Text} from '@chakra-ui/react'
+import { keyframes } from "@emotion/react";
 import {  PiFishBold } from "react-icons/pi";
 import { beiColor } from '../Data/data';
 const animation = keyframes

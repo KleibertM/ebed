@@ -1,4 +1,5 @@
-import { Button, Text, Tooltip, keyframes } from '@chakra-ui/react'
+import { Button, Text, Tooltip } from '@chakra-ui/react'
+import { keyframes } from "@emotion/react";
 import { Link } from 'react-router-dom'
 import { useCart } from '../../hook/cartHook'
 import { beiColor, purColor } from '../Data/data';
