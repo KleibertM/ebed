@@ -41,7 +41,7 @@ const CardComponent = ({ dataItem }) => {
                             image={imgSrc}
                             name={name}
                             wImg={'100%'}
-                            hImg={'max-content'}
+                            hImg={'auto'}
                             onLoad={() => setImageLoaded(true)}
                             style={{
                                 display: imageLoaded ? 'block' : 'none'
