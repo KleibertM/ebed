@@ -9,7 +9,7 @@ export const getData = async () => {
   
   try {
     const response = await axios.get(VITE_FIREBASE_API_ENDPOINT);
-    console.log('Data fetched successfully:', response.data);
+    // console.log('Data fetched successfully:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);

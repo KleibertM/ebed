@@ -26,13 +26,13 @@ const DetailCards = ({data}) => {
         <>
             {filterData.length ? (
                 <>
-                    <Box borderRadius='lg' overflow='hidden' w={'90%'} h={{ base: '95vh', md: 'auto' }} position={'relative'} bg='white' display={'flex'} flexDirection={['column', 'row']} gap={[0,20]}  justifyContent={'center'} paddingTop={['0', '1rem']} px={['40px', '0']} margin={'0 auto'}>
+                    <Box borderRadius='lg' overflow='hidden' w={'100%'} h={{ base: '95vh', md: 'auto' }} position={'relative'} bg='white' display={'flex'} flexDirection={['column', 'row']} gap={[0,20]}  justifyContent={'center'} paddingTop={['0', '1rem']} px={['0px', '40px']} margin={'0'}>
 
                         <Box h={{ base: '450px', md: '550px' }} w={['100%', '550px']} overflow={'hidden'} px='8' position={'relative'}  >
                             <Flex w={'100%'} h={'100%'} flexDirection={'column'} position={'absolute'} top={0} left={0} >
                                 <ImageRender
                                     hImg={['450px', '500px']}
-                                    wImg={['450px', '550px']}
+                                    wImg={['100%', '550px']}
                                     image={filterData[0].imgSrc}
                                     name={filterData[0].title} />
 

@@ -5,7 +5,6 @@ import { useState } from "react"
 import { HiSearch } from "react-icons/hi"
 
 const ProductsWithPagination = ({ data }) => {
-  console.log('Data llegando :', data);
   
   const [searchTerm, setSearchTerm] = useState("")
   const [sortOrder, setSortOrder] = useState("asc")

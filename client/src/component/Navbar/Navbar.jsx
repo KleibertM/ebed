@@ -1,12 +1,9 @@
 import {Flex, Text, Avatar} from '@chakra-ui/react'
-// import Sidebar from '../sidebar/Sidebar'
 import Logo from '../../assets/img/logo.png'
 import {Link} from 'react-router-dom'
-// import { lazy, Suspense } from 'react';
 import BtnSidebar from '../sidebar/BtnSidebar';
 import { PiBagFill, PiPhoneCallFill } from "react-icons/pi";
 import { beiColor, purColor } from '../Data/data';
-// const Sidebar = lazy(()=> import('../sidebar/Sidebar'))
 
 const Navbar = () => {
     
